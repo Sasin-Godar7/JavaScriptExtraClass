@@ -8,39 +8,38 @@
 </head>
 
 <body>
-    <fieldset style="width: auto;">
-        <form action="index.php">
 
-            <label for="temperatur">Temperature :</label>
-            <input type="text" id="temp" placeholder="enter the temperatur" name="temperatur">
-            <br><br>
+    <form action="index.php">
 
-            <input type="radio" name="conv" id="cel" value="cel" checked>Celcius-Fehrenheit
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <input type="radio" name="conv" id="fer" value="fer">Fehrenheit-Celcius
+        <label for="temperatur">Temperature :</label>
+        <input type="text" id="temp" placeholder="enter the temperatur" name="temperatur">
+        <br><br>
 
-            <br><br>
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button type="button" id="btn" onclick="convertTemp()">Convert</button>
+        <input type="radio" name="conv" id="cel" value="cel" checked>Celcius-Fehrenheit
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <input type="radio" name="conv" id="fer" value="fer">Fehrenheit-Celcius
 
-        </form>
-        <h3>The required convertion is: <input type="text" id="res"></h3>
-    </fieldset>
+        <br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="button" id="btn" onclick="convertTemp()">Convert</button>
+
+    </form>
+    <h3>The required convertion is: <input type="text" id="res" readonly></h3>
 
 
     <script>
         function convertTemp() {
             const temp = parseFloat(document.getElementById("temp").value);
-            let operator = document.querySelector('input[name="operator"]:checked').value;
+            let operator = document.querySelector('input[name="conv"]:checked').value;
             let result;
             switch (operator) {
-                case "cel":
-                    result = (temp * 9 / 5) + 32;
+                case 'cel':
+                    result = (temp * 9 / 5) + 32 + " " + "F";
                     break;
 
-                case "fer":
-                    result = (temp - 32) * 5 / 9;
+                case 'fer':
+                    result = (temp - 32) * 5 / 9 + " " + "C";
                     break;
             }
 
