@@ -8,24 +8,24 @@
 </head>
 
 <body>
+    
+        <form action="index.php">
 
-    <form action="index.php">
+            <label for="temperatur">Temperature :</label>
+            <input type="text" id="temp" placeholder="enter the temperatur" name="temperatur">
+            <br><br>
 
-        <label for="temperatur">Temperature :</label>
-        <input type="text" id="temp" placeholder="enter the temperatur" name="temperatur">
-        <br><br>
+            <input type="radio" name="conv" id="cel" value="cel" checked>Celcius-Fehrenheit
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="conv" id="fer" value="fer">Fehrenheit-Celcius
 
-        <input type="radio" name="conv" id="cel" value="cel" checked>Celcius-Fehrenheit
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <input type="radio" name="conv" id="fer" value="fer">Fehrenheit-Celcius
+            <br><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="button" id="btn" onclick="convertTemp()">Convert</button>
 
-        <br><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <button type="button" id="btn" onclick="convertTemp()">Convert</button>
-
-    </form>
-    <h3>The required convertion is: <input type="text" id="res" readonly></h3>
+        </form>
+        <h3>The required convertion is: <input type="text" id="res" readonly></h3>
 
 
     <script>
@@ -35,11 +35,11 @@
             let result;
             switch (operator) {
                 case 'cel':
-                    result = (temp * 9 / 5) + 32 + " " + "F";
+                    result = (temp * 9 / 5) + 32 +" " + "F";
                     break;
 
                 case 'fer':
-                    result = (temp - 32) * 5 / 9 + " " + "C";
+                    result = (temp - 32) * 5 / 9 +" "+ "C";
                     break;
             }
 
