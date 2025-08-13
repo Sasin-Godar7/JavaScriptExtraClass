@@ -15,31 +15,38 @@
             <input type="text" id="temp" placeholder="enter the temperatur" name="temperatur">
             <br><br>
 
-            <input type="radio" name="conv" id="cel" value="cel" checked >Celcius-Fehrenheit
+            <input type="radio" name="conv" id="cel" value="cel" checked>Celcius-Fehrenheit
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <input type="radio" name="conv" id="fer" value="fer">Fehrenheit-Celcius
 
             <br><br>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <button type="button" id="btn" onclick="convertTemp()" >Convert</button>
+            <button type="button" id="btn" onclick="convertTemp()">Convert</button>
 
         </form>
-        <h3 >The required convertion is: <input type="text" id="res" ></h3>
+        <h3>The required convertion is: <input type="text" id="res"></h3>
     </fieldset>
 
 
     <script>
-        function convertTemp(){
-        const temp = parseFloat(document.getElementById("temp").value);
-        let operator = document.querySelector('input[name="conv"]:checked').value;
-        }
+        function convertTemp() {
+            const temp = parseFloat(document.getElementById("temp").value);
+            let operator = document.querySelector('input[name="operator"]:checked').value;
+            let result;
+            switch (operator) {
+                case "cel":
+                    result = (temp * 9 / 5) + 32;
+                    break;
 
-        if(operator == cel)
-    {
-       fer = (temp * 9/5) + 32;
-       document.getElementById("res").value=fer;
-    }
+                case "fer":
+                    result = (temp - 32) * 5 / 9;
+                    break;
+            }
+
+            document.getElementById("res").value = result;
+
+        }
 
     </script>
 
