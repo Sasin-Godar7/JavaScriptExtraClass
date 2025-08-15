@@ -1,77 +1,109 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Calculator</title>
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #74b9ff, #a29bfe);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculator {
+            background-color: #ffeaa7;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+            width: 320px;
+        }
+
+        #display {
+            width: 95%;
+            height: 60px;
+            font-size: 24px;
+            text-align: right;
+            border: none;
+            border-radius: 10px;
+            padding: 10px;
+            margin-bottom: 20px;
+            background-color: #fff;
+            box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .button {
+            width: 60px;
+            height: 60px;
+            margin: 5px;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            background-color: #fdcb6e;
+            transition: all 0.2s ease;
+        }
+
+        .button:hover {
+            background-color: #e17055;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .button:active {
+            transform: scale(0.98);
+        }
+
+        .button.wide {
+            width: 130px;
+        }
+
+        .button.tall {
+            height: 130px;
+        }
+    </style>
 </head>
 <body>
-    
-    <div style="text-align: center; border-radius: 10px;">
-    <div  style=" background-color: khaki; width: 400px; text-align: center; border-radius: 2px; height: 500px;"   >
-        
-            <input style="height: 50px; width: 97.5%; border-radius: 7px;" type="text" id="display" value="0"  >
-            <br><br><br>
+    <div class="calculator">
+        <input type="text" id="display" value="0" readonly>
 
-            <input  style="width: 60px; height: 60px; border-radius: 5px;"  type="button"  id="btn_c" value="C" onclick="">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            
-            <input  style="width: 60px; height: 60px; border-radius: 5px;" type="button" name="" id="btn_ce" value="CE" onclick="">
-             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            <input  style="width: 60px; height: 60px; border-radius: 5px;" type="button" name="" id="btn_per" value="%" onclick="">
-             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            <input  style="width: 60px; height: 60px; border-radius: 5px;" type="button" name="" id="btn_div" value="/" onclick="">
-            <br><br>
-
-            <input  style="width: 60px; height: 60px; border-radius: 5px;" type="button" name="" id="btn_7" value="7" onclick="">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            <input style="width: 60px; height: 60px; border-radius: 5px;"  type="button" name="" id="btn_8" value="8" onclick="">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            <input style="width: 60px; height: 60px; border-radius: 5px;"  type="button" name="" id="btn_9" value="9" onclick="">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            <input  style="width: 60px; height: 60px; border-radius: 5px;" type="button" name="" id="btn_mul" value="*" onclick="">
-            <br><br>
-
-            <input style="width: 60px; height: 60px; border-radius: 5px;"  type="button" name="" id="btn_4" value="4" onclick="">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            <input style="width: 60px; height: 60px; border-radius: 5px;"  type="button" name="" id="btn_5" value="5" onclick="">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            <input style="width: 60px; height: 60px; border-radius: 5px;"  type="button" name="" id="btn_6" value="6" onclick="">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            <input  style="width: 60px; height: 60px; border-radius: 5px;" type="button" name="" id="btn_sub" value="-" onclick="">
-            <br><br>
-
-            <input style="width: 60px; height: 60px; border-radius: 5px;"  type="button" name="" id="btn_1" value="1" onclick="">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            <input style="width: 60px; height: 60px; border-radius: 5px;"  type="button" name="" id="btn_2" value="2" onclick="">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            <input style="width: 60px; height: 60px; border-radius: 5px;"  type="button" name="" id="btn_3" value="3" onclick="">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            <input style="width: 60px; height: 60px; border-radius: 5px;"  type="button" name="" id="btn_add" value="+" onclick="">
-            <br><br>
-
-            <input style="width: 150px; height: 80px; border-radius: 5px;" type="button" name="" id="btn_0" value="0" onclick="" style="width: 60px; height: 80px;">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-            <input style="width: 60px; height: 60px; border-radius: 5px;"  type="button" name="" id="btn_dot" value="." onclick="">
-            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-             <input style="width: 90px; height: 80px; border-radius: 5px;" type="button" name="" id="btn_equal" value="=" onclick="" style="width: 20px; height: 20px;">
-
-
-
-</div>
+        <div>
+            <button class="button">C</button>
+            <button class="button">CE</button>
+            <button class="button">%</button>
+            <button class="button">/</button>
+        </div>
+        <div>
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="button">*</button>
+        </div>
+        <div>
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="button">-</button>
+        </div>
+        <div>
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="button">+</button>
+        </div>
+        <div>
+            <button class="button wide">0</button>
+            <button class="button">.</button>
+            <button class="button tall">=</button>
+        </div>
     </div>
 </body>
 </html>
