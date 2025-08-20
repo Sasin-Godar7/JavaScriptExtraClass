@@ -55,7 +55,31 @@
     </div>
 
 
+<script>
+    const button = document.querySelector(".button");
+    const circles = document.querySelectorAll(".circle");
+    const diceFaces = {
+        1: [5],
+        2: [1, 9],
+        3: [1, 5, 9],
+        4: [1, 3, 7, 9],
+        5: [1, 3, 5, 7, 9],
+        6: [1, 3, 4, 6, 7, 9]
+    };
+    function resetDice() {
+        circles.forEach(c => c.style.visibility = "hidden");
+    }
+    function rollDice() {
+        resetDice();
+        const num = Math.floor(Math.random() * 6) + 1; // 1–6
+        diceFaces[num].forEach(id => {
+            document.getElementById(id.toString()).style.visibility = "visible";
+        });
+    }
 
+    resetDice();
+    button.addEventListener("click", rollDice);
+</script>
 </body>
 
 </html>
