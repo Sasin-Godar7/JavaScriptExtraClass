@@ -12,13 +12,15 @@
         <input type="number" name=""  id="input" >
         <br><br>
         &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
-        <button class="button" onclick="multiplcation()" type="button" >Generate </button>
-        <button type="button" id="clear" onclick="reset()">Clear</button>
+        <button class="button" onclick="multiplcation('mul')" type="button" >Generate </button>
+        <button type="button" id="clear" onclick="multiplcation('clear')">Clear</button>
 </form>
 
 <p id="result"></p>
         <script>
-            function multiplcation()
+            function multiplcation(value)
+            {
+                if (value === "mul")
             {
             let  num  = document.getElementById('input').value;
             let mul = 1;
@@ -35,13 +37,11 @@
 
         document.getElementById('result').innerHTML=product;
     }
-
-    function reset(){
-      document.getElementById('input').value="";
-        document.getElementById('result').innerHTML="";
-
+    else
+    {
+        document.getElementById('result').innerHTML = " ";
     }
-
+    }
         </script>
     
 
