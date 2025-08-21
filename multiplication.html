@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+
+        <label for="input">Enter the number</label>
+        <input type="number" name=""  id="input" >
+        <br><br>
+        &nbsp;   &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp; &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;  &nbsp;
+        <button class="button" onclick="multiplcation()" type="button" >Generate </button>
+        <button type="button" id="clear" onclick="reset()">Clear</button>
+</form>
+
+<p id="result"></p>
+        <script>
+            function multiplcation()
+            {
+            let  num  = document.getElementById('input').value;
+            let mul = 1;
+            let i=1;
+            let product =" ";
+
+            for(i=1;i<=10;i++)
+        {
+            mul = num * i;
+        
+        product = product + num.toString() + "x" + i + "=" +mul
+        + "<br>";
+        }
+
+        document.getElementById('result').innerHTML=product;
+    }
+
+    function reset(){
+      document.getElementById('input').value="";
+        document.getElementById('result').innerHTML="";
+
+    }
+
+        </script>
+    
+
+    
+</body>
+</html>
