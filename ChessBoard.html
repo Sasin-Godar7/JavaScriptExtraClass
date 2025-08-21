@@ -1,23 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Simple Chessboard UI</title>
+<style>
+  :root{
+    --light:#f0d9b5;
+    --dark:#b58863;
+  }
+  body{
+    margin:0; display:grid; place-items:center; min-height:100vh;
+    font-family: system-ui, Arial, sans-serif; background:#f6f7fb;
+  }
+  .board{
+    display:grid;
+    grid-template-columns: repeat(8, 1fr);
+    aspect-ratio: 1 / 1;
+    width:min(90vmin, 560px);
+    border:8px solid #222; border-radius:8px; overflow:hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,.12);
+  }
+  .sq{
+    display:grid; place-items:center;
+    font-size: clamp(20px, 5vmin, 38px);
+    user-select:none;
+    transition: background .15s;
+  }
+  .sq.light{ background:var(--light); }
+  .sq.dark { background:var(--dark); }
+  .sq:hover{ outline:2px solid rgba(0,0,0,.2); outline-offset:-2px; }
+  /* file/rank labels (optional) */
+  .label{
+    position:absolute; inset:auto auto 6px 6px; font-size:12px; opacity:.6;
+  }
+  .sqwrap{ position:relative; }
+  .sqwrap .piece{ pointer-events:none; }
+</style>
 </head>
-
 <body>
 
-    <div>
-        ksnf 
+<div id="board" class="board"></div>
 
+<script>
+  // Build 8x8 board
+  const board = document.getElementById('board');
 
-        a\
+  // Unicode pieces
+  const W = ["♖","♘","♗","♕","♔","♗","♘","♖"];
+  const B = ["♜","♞","♝","♛","♚","♝","♞","♜"];
 
-    </div>
+  for (let r = 8; r >= 1; r--) {            // ranks 8 → 1 (top to bottom)
+    for (let f = 1; f <= 8; f++) {          // files 1 → 8 (left to right)
+      const isDark = (r + f) % 2 === 0;
+
+      // wrapper so we can place labels easily
+      const wrap = document.createElement('div');
+      wrap.className = 'sqwrap';
+
+      const sq = document.createElement('div');
+      sq.className = 'sq ' + (isDark ? 'dark' : 'light');
+
+      // add starting pieces (static UI only)
+      let piece = '';
+      if (r === 8) piece = B[f-1];
+      if (r === 7) piece = "♟";
+      if (r === 2) piece = "♙";
+      if (r === 1) piece = W[f-1];
+
+      if (piece) {
+        const span = document.createElement('span');
+        span.className = 'piece';
+        span.textContent = piece;
+        sq.appendChild(span);
+      }
+
+      // small coordinate label (optional)
+      const showLabels = true;
+      if (showLabels && (f === 1 || r === 1)) {
+        const lab = document.createElement('span');
+        lab.className = 'label';
+        const fileChar = String.fromCharCode(96 + f); // a..h
+        lab.textContent = (f === 1 ? r : fileChar);
+        wrap.appendChild(lab);
+      }
+
+      wrap.appendChild(sq);
+      board.appendChild(wrap);
+    }
+  }
+</script>
 
 </body>
-
 </html>
-
