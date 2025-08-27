@@ -1,57 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Math Functions</title>
     <style>
-        .button{
-            background-color: antiquewhite;
-            width: auto;
-            border-radius: 4px;
-            color: black;
-           
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
         }
-        .button:hover{
-            border: 3px solid blue;
+
+        .container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            width: 350px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input {
+            padding: 8px;
+            width: 200px;
+            margin-top: 8px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #222;
+            background: #f1f1f1;
+            padding: 10px;
+            border-radius: 8px;
         }
     </style>
 </head>
+
 <body>
-    <form action="index.php">
-        <label for="number">Enter Number :</label>
-        <input type="number" name="number" id="num">
-        <br><br>
-
-        <button type="button" class="button"  onclick="calculation(this.value)" value="abs">Abs</button>
-        <button type="button" class="button"  onclick="calculation()" value="sqrt">sqrt</button>
-        <button type="button" class="button"  onclick="calculation()" value="cbrt">cbrt</button>
-        <button type="button" class="button"  onclick="calculation()" value="floor">floor</button>
-        <button type="button" class="button"  onclick="calculation()" value="ceil">ceil</button>
-        <br><br>
-        <button type="button" class="button"  onclick="calculation()" value="round">round</button>
-        <button type="button" class="button"  onclick="calculation()" value="random">random</button>
-        <button type="button" class="button"  onclick="calculation()" value="sin">sin</button>
-        <button type="button" class="button"  onclick="calculation()" value="cos">cos</button>
-        <button type="button" class="button"  onclick="calculation()" value="tan">tan</button>
-
-    </form>
+    <div class="container">
+        <h2>Math Calculator</h2>
+        <form onsubmit="return false;">
+            <label for="num">Enter Number:</label><br>
+            <input type="number" id="num" required>
+            <div class="buttons">
+                <button type="button" class="button" onclick="calculation(this.value)" value="abs">Abs</button>
+                <button type="button" class="button" onclick="calculation(this.value)" value="sqrt">Sqrt</button>
+                <button type="button" class="button" onclick="calculation(this.value)" value="cbrt">Cbrt</button>
+                <button type="button" class="button" onclick="calculation(this.value)" value="floor">Floor</button>
+                <button type="button" class="button" onclick="calculation(this.value)" value="ceil">Ceil</button>
+                <button type="button" class="button" onclick="calculation(this.value)" value="round">Round</button>
+                <button type="button" class="button" onclick="calculation(this.value)" value="random">Random</button>
+                <button type="button" class="button" onclick="calculation(this.value)" value="sin">Sin</button>
+                <button type="button" class="button" onclick="calculation(this.value)" value="cos">Cos</button>
+                <button type="button" class="button" onclick="calculation(this.value)" value="tan">Tan</button>
+            </div>
+        </form>
+        <div id="output" class="result">Result will be shown here</div>
+    </div>
 
     <script>
-        function calculation()
-        {
-        const number = document.getElementById('num').value;
+        function calculation(value) {
+            let number = parseFloat(document.getElementById('num').value);
+            let result;
 
-        switch(value)
-        {
-            case "abs":
-                alert(Math.abs(number));
+            switch (value) {
+                case "abs":
+                     result = Math.abs(number);
+                      break;
+                case "sqrt": 
+                result = Math.sqrt(number);
+                 break;
+                case "cbrt": 
+                result = Math.cbrt(number); break;
+                case "floor": 
+                result = Math.floor(number);
+                 break;
+                case "ceil":
+                     result = Math.ceil(number); 
+                     break;
+                case "round": 
+                result = Math.round(number); 
                 break;
-        }
-    
-        }
-        
+                case "random": 
+                result = Math.random(); 
+                break;
+                case "sin": 
+                result = Math.sin(number);
+                 break;
+                case "cos":
+                     result = Math.cos(number); 
+                     break;
+                case "tan":
+                     result = Math.tan(number); 
+                     break;
+                default: result = "Invalid choice!";
+            }
 
+            document.getElementById('output').innerText = "Result: " + result;
+        }
     </script>
 </body>
+
 </html>
