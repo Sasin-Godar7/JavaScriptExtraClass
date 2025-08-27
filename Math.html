@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .button{
+            background-color: antiquewhite;
+            width: auto;
+            border-radius: 4px;
+            color: black;
+           
+        }
+        .button:hover{
+            border: 3px solid blue;
+        }
+    </style>
+</head>
+<body>
+    <form action="index.php">
+        <label for="number">Enter Number :</label>
+        <input type="number" name="number" id="num">
+        <br><br>
+
+        <button type="button" class="button"  onclick="calculation(this.value)" value="abs">Abs</button>
+        <button type="button" class="button"  onclick="calculation()" value="sqrt">sqrt</button>
+        <button type="button" class="button"  onclick="calculation()" value="cbrt">cbrt</button>
+        <button type="button" class="button"  onclick="calculation()" value="floor">floor</button>
+        <button type="button" class="button"  onclick="calculation()" value="ceil">ceil</button>
+        <br><br>
+        <button type="button" class="button"  onclick="calculation()" value="round">round</button>
+        <button type="button" class="button"  onclick="calculation()" value="random">random</button>
+        <button type="button" class="button"  onclick="calculation()" value="sin">sin</button>
+        <button type="button" class="button"  onclick="calculation()" value="cos">cos</button>
+        <button type="button" class="button"  onclick="calculation()" value="tan">tan</button>
+
+    </form>
+
+    <script>
+        function calculation()
+        {
+        const number = document.getElementById('num').value;
+
+        switch(value)
+        {
+            case "abs":
+                alert(Math.abs(number));
+                break;
+        }
+    
+        }
+        
+
+    </script>
+</body>
+</html>
