@@ -1,30 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
 
 
     <form action="">
         <label for="string">Enter any string</label>
-        <input type="text" id="input" >
-<br><br>
-        <button type="button" value="push">Push to Array</button>
-        <button type="button" value="pop">Pop from Array</button>
-        <button type="button" value="shift">Shift from Array</button>
-        <button type="button" value="unshift">Unshift from Array</button>
-        <button type="button" value="sort">Sorting Sorting</button>
+        <input type="text" id="input">
+        <br><br>
+        <button type="button" value="push" onclick="stringMod(this.value) ">Push to Array</button>
+        <button type="button" value="pop" onclick="stringMod(this.value) ">Pop from Array</button>
+        <button type="button" value="shift" onclick="stringMod(this.value) ">Shift from Array</button>
+        <br><br>
+        <button type="button" value="unshift" onclick="stringMod(this.value) ">Unshift from Array</button>
+        <button type="button" value="sort" onclick="stringMod(this.value) ">Sorting </button>
+        <button type="button" value="reverse" onclick="stringMod(this.value) ">Reverse String </button>
 
     </form>
-    <h2>Array : <input type="text"></h2>
-    
+    <h2 id="res"> </h2>
+
     <script>
         // const fruits = ["apple","banana","mango"]
         // alert(fruits.length);
-    
+
         // console.log(fruits);
 
         // fruits.push("aamba","lemon","kiwi","berry");
@@ -39,12 +43,12 @@
 
         // fruits.unshift()
         // console.log("after the unshift ",fruits);
-        
+
         // fruits.sort()
         //  console.log("after the sorting ",fruits);
 
         //  console.log("-------merging -----")
-         
+
         //  const god = ["krishna" , "Ram"]
         //  console.log(god)
         //  const goddess = ["Radha", "Sita"]
@@ -53,9 +57,44 @@
         //  const jodi = god.concat(goddess)
         //  console.log("after merging",jodi)
 
+        array = [];
+        function stringMod(value) {
+
+            let string = document.getElementById('input').value;
+
+           switch (value) {
+        case 'push':
+          if (string !== "") array.push(string);
+          break;
+
+        case 'pop':
+          array.pop();
+          break;
+
+        case 'shift':
+          array.shift();
+          break;
+
+        case 'unshift':
+          if (string !== "") array.unshift(string);
+          break;
+
+        case 'sort':
+          array.sort();
+          break;
+
+        case 'reverse':
+          array.reverse();
+          break;
+      }
+
+      // Display result
+      document.getElementById('res').innerHTML = "After modification: " + array.join(", ");
+    }
 
 
     </script>
-    
+
 </body>
+
 </html>
