@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <form action="">
+        <fieldset style="width: 30%;">
+            <label for="string">Enter String1</label>
+            <input type="text" id="string">
+            <br><br>
+            <button type="button" value="check" onclick="palindromeCheck(this)">
+                check Palindrome</button>
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+
+            <button type="button" value="clear">Clear</button>
+
+    </form>
+    <h2 id="result"> </h2>
+    </fieldset>
+
+    <script>
+
+        function palindromeCheck(value) {
+
+            let str = document.getElementById('string').value;
+            let rev = "";
+            for (let i = str.length - 1; i >= 0; i--) {
+                rev = rev + str.charAt(i);
+            }
+            if (str == rev) {
+                document.getElementById("result").innerHTML = str +
+                    " is palindrome";
+            }
+            else {
+                document.getElementById("result").innerHTML = str + " isnot palindrome";
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
