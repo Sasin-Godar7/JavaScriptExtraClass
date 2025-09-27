@@ -25,7 +25,7 @@
             <button type="button" id="btn" onclick="convertTemp()">Convert</button>
 
         </form>
-        <h3>The required convertion is: <input type="text" id="res" readonly></h3>
+       <h3 id="res"></h3>
 
 
     <script>
@@ -43,7 +43,7 @@
                     break;
             }
 
-            document.getElementById("res").value = result;
+            document.getElementById("res").innerHTML ="After conversion :"+ result;
 
         }
 
