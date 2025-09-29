@@ -8,9 +8,9 @@
 <body>
     
     <script>
-        let user = prompt("Enter your choice Scissor Paper Rock : ");
-        let comp = Math.floor(Math.random()*3);
-        let cpu = ["S" , "P" , "R"][comp];
+        let user = prompt("Enter your choice: Scissor (S), Paper (P), Rock (R)").toUpperCase();
+        let comp = Math.floor(Math.random() * 3);
+        let cpu = ["S", "P", "R"][comp];
 
     const match = (cpu , user)=>{
         if(user === cpu)
@@ -52,7 +52,7 @@
     }
 
  let result =  match(cpu,user);
- document.write(`CPU:${cpu} <br> USER:${user}<br> The Winner is ${result.toUpperCase()}`)
+document.writeln(`CPU:${cpu} <br> USER:${user}<br> The Winner is ${result.toUpperCase()}`)
 
      
     </script>
