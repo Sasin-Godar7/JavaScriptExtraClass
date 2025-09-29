@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game</title>
+</head>
+<body>
+    
+    <script>
+        let user = prompt("Enter your choice Scissor Paper Rock : ");
+        let comp = Math.floor(Math.random()*3);
+        let cpu = ["S" , "P" , "R"][comp];
+
+    const Math = (cpu , user)=>{
+        if(user === cpu)
+    {
+        return "Nobody wins"
+    }
+
+    else if(user ==="S" && cpu ==="P")
+    {
+        return "user";
+    }
+
+        else if(user ==="P" && cpu ==="S")
+    {
+        return "cpu";
+    }
+
+        else if(user ==="S" && cpu ==="R")
+    {
+        return "cpu";
+    }
+
+        else if(user ==="R" && cpu ==="S")
+    {
+        return "user";
+    }
+
+         else if(user ==="R" && cpu ==="P")
+    {
+        return "cpu";
+    }
+
+         else if(user ==="P" && cpu ==="R")
+    {
+        return "user";
+    }
+    
+
+    }
+
+ let result =  match(cpu,user);
+ document.write(`CPU:${cpu} <br> USER:${user}<br> The Winner is ${result.toUpperCase()}`)
+
+     
+    </script>
+</body>
+</html>
