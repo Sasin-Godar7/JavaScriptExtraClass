@@ -6,6 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Chess Board</title>
   <style>
+    *{
+      background-color: #eee;
+    }
     .board {
       width: 480px;
       height: 480px;
@@ -13,6 +16,7 @@
       grid-template-columns: repeat(8, 1fr);
       grid-template-rows: repeat(8, 1fr);
       border: 3px solid black;
+     margin-left: 500px;
     }
 
     .square {
@@ -22,6 +26,7 @@
 
     .white {
       background-color: #f0d9b5; /* light square */
+      text-align:left;
     }
 
     .black {
@@ -35,7 +40,7 @@
   <div class="board">
     <!-- 64 squares manually -->
     <!-- Row 1 -->
-    <div class="square white"></div>
+    <div class="square white">8</div>
     <div class="square black"></div>
     <div class="square white"></div>
     <div class="square black"></div>
@@ -45,7 +50,7 @@
     <div class="square black"></div>
 
     <!-- Row 2 -->
-    <div class="square black"></div>
+    <div class="square black">7</div>
     <div class="square white"></div>
     <div class="square black"></div>
     <div class="square white"></div>
@@ -55,7 +60,7 @@
     <div class="square white"></div>
 
     <!-- Row 3 -->
-    <div class="square white"></div>
+    <div class="square white">6</div>
     <div class="square black"></div>
     <div class="square white"></div>
     <div class="square black"></div>
@@ -65,7 +70,7 @@
     <div class="square black"></div>
 
     <!-- Row 4 -->
-    <div class="square black"></div>
+    <div class="square black">5</div>
     <div class="square white"></div>
     <div class="square black"></div>
     <div class="square white"></div>
@@ -75,7 +80,7 @@
     <div class="square white"></div>
 
     <!-- Row 5 -->
-    <div class="square white"></div>
+    <div class="square white">4</div>
     <div class="square black"></div>
     <div class="square white"></div>
     <div class="square black"></div>
@@ -85,7 +90,7 @@
     <div class="square black"></div>
 
     <!-- Row 6 -->
-    <div class="square black"></div>
+    <div class="square black">3</div>
     <div class="square white"></div>
     <div class="square black"></div>
     <div class="square white"></div>
@@ -95,7 +100,7 @@
     <div class="square white"></div>
 
     <!-- Row 7 -->
-    <div class="square white"></div>
+    <div class="square white">2</div>
     <div class="square black"></div>
     <div class="square white"></div>
     <div class="square black"></div>
@@ -105,7 +110,7 @@
     <div class="square black"></div>
 
     <!-- Row 8 -->
-    <div class="square black"></div>
+    <div class="square black">1 </div>
     <div class="square white"></div>
     <div class="square black"></div>
     <div class="square white"></div>
