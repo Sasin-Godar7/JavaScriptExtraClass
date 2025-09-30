@@ -11,9 +11,9 @@
 
     <script>
         let user = prompt("Scissor(s),Paper(p),Rock(r)..what's your choice ?");
-        let cpu = Math.floor(Math.random() * 3);
+        let comp  = Math.floor(Math.random() * 3);
 
-        let comp = [s,p,r][cpu];
+        let cpu = ["s","p","r"][comp];
 
         const match = (cpu, user) => {
             if (user === cpu) {
