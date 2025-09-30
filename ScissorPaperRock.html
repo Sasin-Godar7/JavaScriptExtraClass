@@ -1,60 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game</title>
+    <title>Document</title>
 </head>
+
 <body>
-    
+
     <script>
-        let user = prompt("Enter your choice: Scissor (S), Paper (P), Rock (R)").toUpperCase();
-        let comp = Math.floor(Math.random() * 3);
-        let cpu = ["S", "P", "R"][comp];
+        let user = prompt("Scissor(s),Paper(p),Rock(r)..what's your choice ?");
+        let cpu = Math.floor(Math.random() * 3);
 
-    const match = (cpu , user)=>{
-        if(user === cpu)
-    {
-        return "Nobody "
-    }
+        let comp = ["s", "p", "r"][cpu];
 
-    else if(user ==="S" && cpu ==="P")
-    {
-        return "user";
-    }
+        const match = (cpu, user) => {
+            if (user === cpu) {
+                return "Nobody"
+            }
 
-        else if(user ==="P" && cpu ==="S")
-    {
-        return "cpu";
-    }
-
-        else if(user ==="S" && cpu ==="R")
-    {
-        return "cpu";
-    }
-
-        else if(user ==="R" && cpu ==="S")
-    {
-        return "user";
-    }
-
-         else if(user ==="R" && cpu ==="P")
-    {
-        return "cpu";
-    }
-
-         else if(user ==="P" && cpu ==="R")
-    {
-        return "user";
-    }
+            else if ((user === "s" && cpu === "p") || (user === "p" && cpu === "r") || (user === "r" && cpu === "s")) {
+                return "user";
+            }
+            else {
+                return "cpu";
+            }
+        }
+    let result =  match(cpu, user);
     
+    document.write(`CPU choose ${cpu} <br> User choose ${user}<br>The Winner is ${result}`);
 
-    }
 
- let result =  match(cpu,user);
-document.writeln(`CPU:${cpu} <br> USER:${user}<br> The Winner is ${result.toUpperCase()}`)
 
-     
+
+
     </script>
+
 </body>
+
 </html>
