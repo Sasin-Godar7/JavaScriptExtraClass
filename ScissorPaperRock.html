@@ -13,7 +13,7 @@
         let user = prompt("Scissor(s),Paper(p),Rock(r)..what's your choice ?");
         let cpu = Math.floor(Math.random() * 3);
 
-        let comp = ["s", "p", "r"][cpu];
+        let comp = [s,p,r][cpu];
 
         const match = (cpu, user) => {
             if (user === cpu) {
@@ -27,9 +27,9 @@
                 return "cpu";
             }
         }
-    let result =  match(cpu, user);
-    
-    document.write(`CPU choose ${cpu} <br> User choose ${user}<br>The Winner is ${result}`);
+        let result = match(cpu, user);
+
+        document.write(`CPU choose ${cpu} <br> User choose ${user}<br>The Winner is ${result}`);
 
 
 
