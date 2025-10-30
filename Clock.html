@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+                body {
+            margin: 0;
+            padding: 0;
+        }
+        #btn {
+            width: 300px;
+            height: 50px;
+            background-color: rgb(81, 37, 226);
+            color: white;
+            border-radius: 5px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            justify-content: center;
+            cursor: pointer;
+        }
+        #myclock {
+            background-color: red;
+            height: 40px;
+            border-radius: 5px;
+            color: white;
+            font-size: 1.4rem;
+            font-weight: 700;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            overflow: hidden;
+            justify-content: center;
+            align-items: center;
+        }
+        #gunda {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        marquee {
+            line-height: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div id="hero">
+  <p id="myclock"><marque></marque> </p>
+   </div>
+   <div id="gunda">
+    <input type="button" id="btn" onclick="clock();" value="Show Clock"/>
+    </div>
+
+   
+    <script type="text/javascript">
+        
+        function clock()
+        {
+            var recent = new Date();
+            document.getElementById("myclock").innerText = recent.toUTCString();
+            setTimeout("clock()",1000);
+        }
+
+
+
+
+
+    </script>
+
+    
+</body>
+</html>
