@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="#" method="post" onsubmit=" validateform()">
+            <label for="username">username:
+                <input type="text" id="username" required>
+            </label>
+            <br><br>
+            <label for="password">password
+                <input type="password" id="password" required>
+            </label>
+            <br><br>
+            <label for="confirmpassword">confirmpassword:
+                <input type="password" id="confirmpassword">
+            </label>
+            <br><br>
+            <label for="dob">Date of Birth:
+                <input type="text" name="dob" id="dateofbirth" value="dd-mm-yyyy">
+            </label>
+            <BR></BR>
+            <label for="phone">Phone number:
+                <input type="tel" id="phone">
+            </label>
+            <br><br>
+            <label for="email">Email :
+                <input type="email" id="email">
+            </label>
+            <br><br>
+            <label for="joining">Date of joining:
+                <input type="text" id="joiningdate">
+            </label>
+            <br><br>
+            <button type="submit" value="Sign Up">Sign Up</button>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button type="reset" value="Clear"> Cancel</button>
+        </form>
+    </div>
+
+
+
+    <script type="text/javascript">
+        function validateform() {
+            var errorno = 0;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById('password').value;
+            var cpassword = document.getElementById('confirmpassword').value;
+            var dateofbirth = document.getElementById('dateofbirth').value;
+            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var joindate = document.getElementById('joiningdate').value;
+
+            var usernamepattern = /^\w+{3,30}$/;
+            var passwordpattern = /^\w+{3,}$/;
+            var dateofbirthpattern = /^(\d{1,2}\-){2}(\d{2,4})$/;
+            var phonepattern = /^\d{10,15}$/;
+            var emailpattern = /^\w+\@(\w+\.)+\w+$/;
+            var joindatepattern = /^(\d{1,2}\-){2}(\d{2,4})$/;
+
+            
+
+
+
+
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>
