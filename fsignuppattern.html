@@ -23,7 +23,7 @@
             </label>
             <br><br>
             <label for="dob">Date of Birth:
-                <input type="text" name="dob" id="dateofbirth" value="dd-mm-yyyy">
+                <input type="text" name="dob" id="dateofbirth" placeholder="dd-mm-yyyy">
             </label>
             <BR></BR>
             <label for="phone">Phone number:
@@ -58,12 +58,19 @@
             var joindate = document.getElementById('joiningdate').value;
 
             var usernamepattern = /^\w+{3,30}$/;
-            var passwordpattern = /^\w+{3,}$/;
+            var passwordpattern = /^\w+{3,12}$/;
             var dateofbirthpattern = /^(\d{1,2}\-){2}(\d{2,4})$/;
             var phonepattern = /^\d{10,15}$/;
             var emailpattern = /^\w+\@(\w+\.)+\w+$/;
             var joindatepattern = /^(\d{1,2}\-){2}(\d{2,4})$/;
 
+
+            if (username.trim() == "") {
+                alert("enter  name please");
+                errorno ++
+            }
+        
+               
             
 
 

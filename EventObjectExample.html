@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="para">
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aut, culpa laboriosam assumenda dolore porro ullam
+        quis sunt quod distinctio nisi.
+        <a href="DiceRoll.html" id="myanchor">Goto diceroll page</a>
+
+    </p>
+
+    <script type="text/javascript">
+        document.getElementById('myanchor').addEventListener("click", function (event) {
+            alert("your ancher is clickedd>>");
+            event.preventDefault()
+            // event.stopPropagation()
+        })
+
+        // event.preventDefault() -- this will prevent form its default function so it wont let go to the another page.
+        // event.stopPropagation() -- this will prevent form event to propagate so if not stop the element will all take event.
+        //    if both not given then both will take event due to propagation and also due to default function it will move to another page.
+
+
+        document.getElementById('para').addEventListener("click", function (event) {
+            alert("paragraph is clicked>> ")
+        })
+        
+
+
+    </script>
+</body>
+
+</html>
